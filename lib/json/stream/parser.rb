@@ -85,9 +85,7 @@ module JSON
                     yajl_start_array yajl_end_array]
 
       def yajl_null id
-        notify_start_document if @opened_scopes == 0
         notify_value nil
-        notify_end_document if @closed_scopes == @opened_scopes
         return 1
       end
 
